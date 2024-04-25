@@ -1,8 +1,9 @@
 # Implementing Audit Trails with SQL Triggers for Enhanced Data Management - Summary
 By implementing triggers for INSERT, UPDATE, and DELETE operations, into a new log table, each change to the data is automatically logged with both its previous and new values, along with metadata such as the operation type, modification date, and user who made the change. This setup is incredibly useful in a variety of business scenarios, such as ensuring compliance with data governance standards, enhancing the auditability of sensitive data, facilitating accurate and timely debugging of data-related issues, and providing a historical record for security analysis and operational transparency.
-
 I took the following employee dataset and loaded it to MSSQL https://www.kaggle.com/datasets/ravindrasinghrana/employeedataset
 
+
+--------------------------------------------
 -- First of all, create a Subset (new table) of table employee_data for demo purposes with only a few columns
 USE MyDatabase
 SELECT EmpID, FirstName, LastName,ADEmail,MaritalDesc
