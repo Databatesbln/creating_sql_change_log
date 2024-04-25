@@ -5,7 +5,7 @@ I took the following employee dataset and loaded it to MSSQL https://www.kaggle.
 Use the "Triggers in SQL Excersice-Main.sql" for the full script. Please note that each trigger can only be created as a stand-alone script which are added to the repository as well. 
 
 
-The final output will be a comprehensove log table that will look like: 
+The final output will be a comprehensive log table that will look like: 
 
 ![image](https://github.com/Databatesbln/creating_sql_change_log/assets/73246189/b85e01e3-8ba9-4a53-9980-f16cc6f37e79)
 
