@@ -1,8 +1,8 @@
 # creating_sql_change_log
 
-#For this p
+# For this project I took the following employee dataset and loaded it to MSSQL https://www.kaggle.com/datasets/ravindrasinghrana/employeedataset
 
-Create a Subset (new table) of table employee_data for demo purposes
+Create a Subset (new table) of table employee_data for demo purposes with only a few columns
 USE MyDatabase
 SELECT EmpID, FirstName, LastName,ADEmail,MaritalDesc
 INTO EmployeeContacts
@@ -46,14 +46,16 @@ CREATE TABLE EmployeeContacts_log (
 );
 
  ------------------------------------------------------ 
---Creating Triggers -These have to be done as Stand-Alone Scripts. Please see the 3 separate files in the git repository
+#  Creating the triggers. These triggers have to be created in a stand-alone script (one for each) and are attached to the repository. 
 
---Create Trigger for Updates (on EmployeeContacts)
+--Create Trigger for Updates 
 
 --Create Trigger for Insert
 
 --Create Trigger for Deletion
 --------------------------------------------------------------
+# Testing the triggers after creation - one for each scenario
+
 --TEST Update, we'll change the MartialDesc and Last Name of EmpID 1013
 UPDATE EmployeeContacts
 SET MaritalDesc = 'Married', LastName = 'Smith'
@@ -73,6 +75,10 @@ SELECT * FROM EmployeeContacts_log
 
 ![image](https://github.com/Databatesbln/creating_sql_change_log/assets/73246189/b85e01e3-8ba9-4a53-9980-f16cc6f37e79)
 
+As you can see, all 3 types of changes were executed and captured as expected:
+We see EmpID's old and new Last name as well the old and new Marital Status (MartialDesc) with the Operation "U" for Update. 
+We see EmpID 4001 with no old values as this record was newly created, hence the Operation "I". 
+And we see the deleted EmpID 1021 that has no new values. 
 
 
 
