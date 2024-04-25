@@ -25,7 +25,7 @@ ALTER COLUMN EmpID INT NOT NULL;
 ALTER TABLE EmployeeContacts
 ADD CONSTRAINT PK_EmployeeContacts PRIMARY KEY (EmpID);
 
---Create Log Table Where Changes will be stored
+--Create Log Table Where Changes will be stored, ensure column datatypes are an exact match with the ones in the main table
 CREATE TABLE EmployeeContacts_log (
     EmpID INT, -- the ID of the employee whose record was changed
     FirstName_old NVARCHAR(255),
@@ -44,11 +44,11 @@ CREATE TABLE EmployeeContacts_log (
  ------------------------------------------------------ 
 --Creating Triggers -These have to be done as Stand-Alone Scripts. Please see the separate files in the git repository
 
---Create Trigger for Updates (on EmployeeContacts)
+--Create Trigger for Updates - see file "Update Trigger.sql"
 
---Create Trigger for Insert
+--Create Trigger for Insert - see file "Insert Trigger.sql"
 
---Create Trigger for Deletion
+--Create Trigger for Deletion - see file "Deletion Trigger.sql"
 --------------------------------------------------------------
 --TEST Update, we'll change the MartialDesc and Last Name of EmpID 1013
 UPDATE EmployeeContacts
