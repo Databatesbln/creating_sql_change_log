@@ -9,13 +9,14 @@ The final output will be a comprehensive log table that will look like:
 
 ![image](https://github.com/Databatesbln/creating_sql_change_log/assets/73246189/b85e01e3-8ba9-4a53-9980-f16cc6f37e79)
 
-All 3 types of changes were executed and captured as expected:
+All 3 types of changes were executed and captured (Date, Time, Modifyer and Operation performed) as expected:
 
 We see EmpID's old and new Last name as well the old and new Marital Status (MartialDesc) with the Operation "U" for Update. 
 
 We see EmpID 4001 with no old values as this record was newly created, hence the Operation "I". 
 
-And we see the deleted EmpID 1021 that has no new values asit was deleted Operation "D". 
+And we see the deleted EmpID 1021 that has no new values as it was deleted,Operation "D". 
+
 
 
 
